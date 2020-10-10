@@ -11,6 +11,6 @@ Library         Collections
 Variables           ../Config/common/config_prop.py
 
 
-Resource            Logger.robot
+Resource            logger.robot
 Resource            ../Keywords/browser_keyword.robot
 Resource            ../Keywords/common_keywords.robot

@@ -32,12 +32,13 @@ Get headlessChrome
         Call Method    ${chrome options}    add_argument    start-maximized
         Call Method    ${chrome options}    add_argument    incognito
         Call Method    ${chrome options}    add_argument    --headless
+        Call Method    ${chrome options}    add_argument    --no-sandbox
         Call Method    ${chrome options}    add_argument    ignore-certificate-errors
         Call Method    ${chrome options}    add_argument    delete-all-cookies
         Call Method    ${chrome options}    add_argument    --disable-dev-shm-usage
         Create Webdriver    Chrome     chrome_options=${chrome options}
         ${S2L}           get library instance    SeleniumLibrary
-        ${webdriver}    Call Method             ${S2L}    _current_browser
+        #${webdriver}    Call Method             ${S2L}    _current_browser
 
 
 Get Chrome
@@ -45,6 +46,7 @@ Get Chrome
     ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome options}    add_argument    start-maximized
     Call Method    ${chrome options}    add_argument    incognito
+    Call Method    ${chrome options}    add_argument    --no-sandbox
     Call Method    ${chrome options}    add_argument    ignore-certificate-errors
     Call Method    ${chrome options}    add_argument    delete-all-cookies
     Call Method    ${chrome options}    add_argument    --disable-dev-shm-usage
